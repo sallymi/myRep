@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+encoding//public/js/menu.json=UTF-8
+encoding//routes/admin/menu.js=UTF-8
+encoding//views/admin/config_listMenu.jade=UTF-8
 encoding//views/ftmp_index.jade=UTF-8
+encoding/app.js=UTF-8

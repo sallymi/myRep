@@ -8,7 +8,9 @@ var express = require('express')
   , admin = require('./routes/admin')
   , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , menu = require('./routes/admin/menu');
+  
 
 var app = express();
 
@@ -32,6 +34,10 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/config', admin.index);
 app.get('/content/:id', admin.getContent);
+app.get('/menu/add',menu.menuAdd);
+app.post('/menu/add',menu.doMenuAdd);
+app.get('/menu/:name',menu.menuAdd);
+app.get('/menu/json/:name',menu.menuAdd);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
