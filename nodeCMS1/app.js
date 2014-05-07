@@ -33,11 +33,11 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/config', admin.index);
-app.get('/content/:id', admin.getContent);
+app.get('/menus/:id', menu.getMenus);
 app.get('/menu/add',menu.menuAdd);
 app.post('/menu/add',menu.doMenuAdd);
 app.get('/menu/:name',menu.menuAdd);
-app.get('/menu/json/:name',menu.menuAdd);
+app.get('/menu/json/:name',menu.menuJSON);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
