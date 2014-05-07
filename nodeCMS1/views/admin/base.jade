@@ -1,0 +1,88 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='put your site description here')
+    meta(name='keywords', content='put your site keywords here')
+    title Clean Slate
+    // STYLES
+    link(href='/admin/css/style.css', rel='stylesheet')
+    link(href='/admin/css/admin.css', rel='stylesheet')
+    // put your stylesheet links here
+    // SCRIPTS
+    // put your script includes here
+    // todo: combine & minify
+    script(src='/admin/js/modernizr.custom.min.js')
+    script(src='/admin/js/jquery-1.8.3.min.js')
+    script(src='/admin/js/jquery.cookie.js')
+    script(src='/admin/js/cleanslate-core.js')
+    //if gte IE 7
+      script(src='/admin/js/lte-ie7.js')
+    // Calipso Module Scripts
+    // End of Calipso Module Scripts
+  body
+nav.adminMenu.row.extended-height
+  ul#admin-menu.menu.admin
+    li#admin-menu-item.admin-menu-item
+      a.admin-menu-link(href='/admin', title='Calipso administration ...')
+        | Administration
+        i.icon-users
+      ul
+        li#admin-core-menu-item.admin-menu-item
+          a.admin-menu-link(href='/admin', title='Manage core settings for Calipso ...')
+            | Core
+            i.icon-wrench
+          ul
+            li#admin-core-config-menu-item.admin-menu-item
+              a.admin-menu-link(href='/admin/core/config', title='Core configuration ...')
+                | Configuration
+                i.icon-wrench
+            li#admin-core-languages-menu-item.admin-menu-item
+              a.admin-menu-link(href='/admin/core/languages', title='Languages ...')
+                | View Languages
+                i.icon-airplane
+        li#admin-modules-menu-item.admin-menu-item
+          a.admin-menu-link(href='/admin', title='Manage module settings ...')
+            | Modules
+            i.icon-layout
+        li#admin-security-menu-item.admin-menu-item-selected
+          a.admin-menu-link-selected(href='', title='Users, Roles & Permissions ...')
+            | Security
+            i.icon-locked-2
+          ul
+            li#admin-security-users-menu-item.admin-menu-item
+              a.admin-menu-link(href='/user/list', title='Manage users ...')
+                | Users
+                i.icon-users
+            li#admin-security-permissions-menu-item.admin-menu-item
+              a.admin-menu-link(href='/admin/permissions', title='Manage permissions ...')
+                | Permissions
+                i.icon-users
+            li#admin-security-roles-menu-item.admin-menu-item
+              a.admin-menu-link(href='/admin/role/list', title='Manage roles ...')
+                | Roles
+                i.icon-users
+        li#admin-logout-menu-item.admin-menu-item
+          a.admin-menu-link(href='/user/logout', title='Logout')
+            | Logout
+            i.icon-upload-3
+    li#cms-menu-item.admin-menu-item
+      a.admin-menu-link(href='/content', title='Manage content ...')
+        | Content Management
+        i.icon-list-2
+      ul
+        li#cms-content-menu-item.admin-menu-item
+          a.admin-menu-link(href='/content/hw', title='Manage content ...')
+            | Content
+            i.icon-book-2
+        li#cms-type-menu-item.admin-menu-item
+          a.admin-menu-link(href='/content/type', title='Manage content types ...')
+            | Content Types
+            i.icon-suitcase
+.container
+  header.row.extended-height
+    .logo.threecol
+      // Default Content
+      h1
+        a(href='/') Calipso
+    block content

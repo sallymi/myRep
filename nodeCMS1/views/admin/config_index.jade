@@ -1,0 +1,39 @@
+extends base
+block content
+  nav.secondary.ninecol.last
+    #user-welcome-or-login
+      a(href='/user/login')
+        | Log In
+        i.icon-log-in
+      span.link-divider |
+      a(href='/user/register') Register
+    #searchForm
+  #messages.row
+  nav.adminToolbar
+  article.row
+    .body.ninecol
+      // PAGE_BODY_START
+      .home-content
+        .home-welcome
+          #53684fe1697d4fd00e000001.content-block(title='Double click to edit content block ...')
+            h3 Welcome!
+            p
+              | This is the default welcome message, this is just a content block that is editable after logging in.
+      // PAGE_BODY_END
+    aside.sidePanel.threecol.last
+      aside.sidePanelItem.aboutMe
+        // Dynamic section content
+        #53684fe1697d4fd00e000002.content-block(title='Double click to edit content block ...')
+          h3 About Me
+          p
+            | Double click here when logged in to edit this text that describes you in all your glory ...
+      aside.sidePanelItem
+        h3 Navigation
+        nav.primary
+      aside.sidePanelItem
+      aside.sidePanelItem
+  footer.footer.row.centred
+    // Default Content
+    .copyright
+      | ©2014 Site Name.
+    

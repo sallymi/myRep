@@ -1,0 +1,46 @@
+extends base
+block content
+  nav.adminToolbar
+    ul#adminToolbar-menu.menu.admin-toolbar.toolbar
+      li#new-menu-item.adminToolbar-menu-item
+        a.adminToolbar-menu-link(href='/content/new', title='Create content ...')
+          | Create
+          i.icon-plus
+  aside#messages.row
+  article.admin-body.row
+    // PAGE_BODY_START
+    article.content
+      table.tabular
+        tbody
+          tr
+            th Title
+            th Type
+            th Author
+            th Published
+            th Updated
+          tr.content-list-item.content-list-item-published.content-type-Block.Content
+            td
+              a(href='/content/show/53684fe1697d4fd00e000001') Welcome Message
+            td Block Content
+            td installation
+            td
+            td Yesterday
+          tr.content-list-item.content-list-item-published.content-type-Block.Content
+            td
+              a(href='/content/show/53684fe1697d4fd00e000002') About Me
+            td Block Content
+            td installation
+            td
+            td Yesterday
+          tr.content-list-item.content-list-item-published.content-type-Article
+            td
+              a(href='/content/show/53684fe1697d4fd00e000003') Example Article
+            td Article
+            td installation
+            td
+            td Yesterday
+    // PAGE_BODY_END
+  footer.row
+    // Admin Footer
+    .col1
+      | Administration
