@@ -7,6 +7,5 @@ exports.index = function(req, res){
 };
 
 exports.getContent = function(req, res){
-	
   res.render('admin/config_listMenu', { title: 'Express' });
 };
