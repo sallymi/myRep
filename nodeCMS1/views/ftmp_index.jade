@@ -1,0 +1,546 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title PizzeriA - Responsive Fullscreen Onepage Template
+    meta(name='robots', content='index, follow')
+    meta(name='keywords', content='')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    // ========================  CSS Files  ==========================
+    link(rel='stylesheet', type='text/css', href='css/style.css', media='all')
+    link(rel='stylesheet', type='text/css', href='css/slider.css')
+    link(rel='stylesheet', type='text/css', href='css/responsive.css')
+    // ========================  JS Files  ===========================
+    script(type='text/javascript', src='js/jquery-1.7.1.min.js')
+    script(type='text/javascript', src='js/supersubs.js')
+    script(type='text/javascript', src='js/quicksand.js')
+    script(type='text/javascript', src='js/quicksand_config.js')
+    script(type='text/javascript', src='js/ts-portfolio-slide.js')
+    script(type='text/javascript', src='js/tinynav.min.js')
+    script(type='text/javascript', src='js/scripts.js')
+    //if lt IE 9
+      script(type='text/javascript', src='js/html5.js')
+    //if lt IE 8
+      div(style=' clear: both; text-align:center; position: relative;')
+        a(href='../../windows.microsoft.com/en-US/internet-explorer/products/ie/home@ocid=ie6_countdown_bannercode')
+          img(src='../../storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg', border='0', height='42', width='820', alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+  body
+// LOADER
+.spinner
+// SLIDER
+ul.cb-slideshow
+  li
+    span Image 01
+  li
+    span Image 02
+  li
+    span Image 03
+  li
+    span Image 04
+// SLIDER END
+section#content
+  // HEADER
+  header
+    .logo
+      a(href='#!/page_home')
+        img(src='images/logo.png', alt='')
+    // MENU
+    nav.menu
+      ul#menu
+        li
+          a(href='#!/page_home') Home
+        li
+          a(href='#!/page_about') About Us
+          ul.submenu_1
+            li
+              a(href='#!/page_more') Profile
+            li
+              a(href='#!/page_more') Mission
+        li
+          a(href='#!/page_services') Services
+        li
+          a(href='#!/page_portfolio') Portfolio
+        li
+          a(href='#!/page_prices') Prices
+        li
+          a(href='#!/page_blog') Blog
+        li.no_bg
+          a(href='#!/page_contact') Contacts
+    // END MENU
+  // END HEADER
+  .inner_copyright
+    | Collect from
+    a(href='http://www.cssmoban.com/', target='_blank', title='网页模板') 网页模板
+  ul
+    li#page_home.no_bg
+    // ABOUT
+    li#page_about
+      a.close(href='#!/page_home')
+      .container
+        .wrapper
+          h1.color_yellow About Us
+          .viewport.viewport2
+            .overview.overview2
+              .fullwidth
+                img.fleft20.pic(src='images/about/pic1.jpg', alt='')
+                h4.color_white Who We Are
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                  a.link(href='#') eiusmod tempor
+                  | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                p
+                  | Excepteur sint occaecat cupidatat
+                  a.link(href='#') non proident
+                  | , sunt in culpa qui officia deserunt mollit anim id est laborum.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .divider
+              h2.color_yellow Meet the Team
+              .one_fourth
+                img.pic(src='images/about/pic2.jpg', alt='')
+                h5.color_white.ucase John Deo/CEO
+                p
+                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .one_fourth
+                img.pic(src='images/about/pic3.jpg', alt='')
+                h5.color_white.ucase Jane Deo/CHIEF
+                p
+                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .one_fourth
+                img.pic(src='images/about/pic4.jpg', alt='')
+                h5.color_white.ucase John Deo/CEO
+                p
+                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .one_fourth_last
+                img.pic(src='images/about/pic5.jpg', alt='')
+                h5.color_white.ucase Jane Deo/CHIEF
+                p
+                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+          .scrollbar.scrollbar2
+            .track
+              .thumb.thumb2
+    // ABOUT END
+    // SERVICES
+    li#page_services
+      a.close(href='#!/page_home')
+      .container
+        .wrapper
+          h1.color_yellow Services
+          .viewport.viewport2
+            .overview.overview2
+              .fullwidth
+                h1.color_white We’ll help you see things from a whole new perspective, Your recipe for success!
+              .divider
+              .one_third
+                .serimg
+                  img.pic(src='images/services/pic1.jpg', alt='')
+                h5.color_white.ucase Fruits & Vegetables
+                p
+                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .one_third
+                .serimg
+                  img.pic(src='images/services/pic2.jpg', alt='')
+                h5.color_white.ucase Breakfast
+                p
+                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .one_third_last
+                .serimg
+                  img.pic(src='images/services/pic3.jpg', alt='')
+                h5.color_white.ucase BBQ & Grilling
+                p
+                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .clear
+              .one_third
+                .serimg
+                  img.pic(src='images/services/pic1.jpg', alt='')
+                h5.color_white.ucase Fruits & Vegetables
+                p
+                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .one_third
+                .serimg
+                  img.pic(src='images/services/pic2.jpg', alt='')
+                h5.color_white.ucase Breakfast
+                p
+                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+              .one_third_last
+                .serimg
+                  img.pic(src='images/services/pic3.jpg', alt='')
+                h5.color_white.ucase BBQ & Grilling
+                p
+                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+                a.button.small.yellow(href='#!/page_more')
+                  span more
+          .scrollbar.scrollbar2
+            .track
+              .thumb.thumb2
+    // SERVICES END
+    // PORTFOLIO
+    li#page_portfolio
+      a.close(href='#!/page_home')
+      .container
+        .wrapper
+          h1.color_yellow Portfolio
+          .viewport.viewport2
+            .overview.overview2
+              #ts-display-portfolio
+                ul#filter.controlnav
+                  li.segment-1.selected-1
+                    a(href='#', data-value='all') All
+                  li.segment-1
+                    a(href='#', data-value='salads') Salads
+                  li.segment-1
+                    a(href='#', data-value='drinks') Drinks
+                  li.segment-1
+                    a(href='#', data-value='chicken') Chicken
+                ul#ts-display-pf-col.image-grid
+                  li.salads(data-id='id-1')
+                    .ts-display-pf-img
+                      span.pftag Salads
+                      img.cover(src='images/pf/pic1.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.drinks(data-id='id-2')
+                    .ts-display-pf-img
+                      span.pftag Drinks
+                      img.cover(src='images/pf/pic2.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.chicken.nomargin(data-id='id-3')
+                    .ts-display-pf-img
+                      span.pftag Chicken
+                      img.cover(src='images/pf/pic3.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.drinks(data-id='id-4')
+                    .ts-display-pf-img
+                      span.pftag Drinks
+                      img.cover(src='images/pf/pic2.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.chicken(data-id='id-5')
+                    .ts-display-pf-img
+                      span.pftag Chicken
+                      img.cover(src='images/pf/pic3.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.salads.nomargin(data-id='id-6')
+                    .ts-display-pf-img
+                      span.pftag Salads
+                      img.cover(src='images/pf/pic1.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.chicken(data-id='id-7')
+                    .ts-display-pf-img
+                      span.pftag Chicken
+                      img.cover(src='images/pf/pic3.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.salads(data-id='id-8')
+                    .ts-display-pf-img
+                      span.pftag Salads
+                      img.cover(src='images/pf/pic1.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.drinks.nomargin(data-id='id-9')
+                    .ts-display-pf-img
+                      span.pftag Drinks
+                      img.cover(src='images/pf/pic2.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.drinks(data-id='id-10')
+                    .ts-display-pf-img
+                      span.pftag Drinks
+                      img.cover(src='images/pf/pic2.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.salads(data-id='id-11')
+                    .ts-display-pf-img
+                      span.pftag Salads
+                      img.cover(src='images/pf/pic1.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+                  li.chicken.nomargin(data-id='id-12')
+                    .ts-display-pf-img
+                      span.pftag Chicken
+                      img.cover(src='images/pf/pic3.jpg', alt='')
+                      .caption_slide
+                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                        a.button.small.yellow(href='#!/page_more')
+                          span more
+          .scrollbar.scrollbar2
+            .track
+              .thumb.thumb2
+    // PORTFOLIO END
+    // PRICE
+    li#page_prices
+      a.close(href='#!/page_home')
+      .container
+        .wrapper
+          h1.color_yellow Price List
+          .two_third
+            .priceimg
+              img.pic(src='images/prices/pic1.jpg', alt='')
+            h4.color_white What We Offer
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              a.link(href='#') eiusmod tempor
+              | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            a.button.small.yellow(href='#!/page_more')
+              span more
+          .one_third_last
+            img.fleft20.pic(src='images/prices/pic2.jpg', alt='')
+            h4.color_white Nuts with Strawberry
+            h3.color_yellow $25.60
+            .divider
+            img.fleft20.pic(src='images/prices/pic2.jpg', alt='')
+            h4.color_white Nuts with Strawberry
+            h3.color_yellow $33.30
+            .divider
+            img.fleft20.pic(src='images/prices/pic2.jpg', alt='')
+            h4.color_white Nuts with Strawberry
+            h3.color_yellow $39.90
+    // PRICE END
+    // BLOG
+    li#page_blog
+      a.close(href='#!/page_home')
+      .container
+        .wrapper
+          h1.color_yellow Blog
+          .viewport.viewport2
+            .overview.overview2
+              .two_third
+                .post(style='height:200px;')
+                  .postimg
+                    img.pic(src='images/blog/pic1.jpg', alt='')
+                  .entry-date
+                    .posttime Sep 2012
+                    .postdate 09
+                  .col02
+                    h2.posttitle
+                      a(href='#!/page_more') tempus velit non quam imperdiet 
+                    .entry-utility
+                      | Posted by
+                      a(href='#') admin
+                      | in
+                      a(href='#') event
+                      | with
+                      a(href='#') 0 Comment
+                    p
+                      | Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nosrud exerci tation ullamcorper suscipit lobortis...
+                    a.button.small.yellow(href='#!/page_more')
+                      span more
+                .divider(style='margin-top:20px;')
+                .post(style='height:200px;')
+                  .postimg
+                    img.pic(src='images/blog/pic2.jpg', alt='')
+                  .entry-date
+                    .posttime Sep 2012
+                    .postdate 07
+                  .col02
+                    h2.posttitle
+                      a(href='#!/page_more') tempus velit non quam imperdiet 
+                    .entry-utility
+                      | Posted by
+                      a(href='#') admin
+                      | in
+                      a(href='#') event
+                      | with
+                      a(href='#') 0 Comment
+                    p
+                      | Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nosrud exerci tation ullamcorper suscipit lobortis...
+                    a.button.small.yellow(href='#!/page_more')
+                      span more
+                .divider(style='margin-top:20px;')
+                .wp-pagenavi
+                  span.pages Page 1 of 3
+                  span.current 1
+                  a.page(href='#') 2
+                  a.page(href='#') 3
+              .one_third_last
+                aside#sidebar
+                  ul
+                    li.widget-container
+                      form#searchform(method='get', action='#')
+                        .bgsearch
+                          input#s(type='text', name='s', value='Site Search...', onfocus='if (this.value == "Site Search...")this.value = "";', onblur='if (this.value == "")this.value = "Site Search...";')
+                          input.searchbutton(type='submit', value='')
+                    li.widget-container
+                      h3.color_yellow Recent Post
+                      ul.rp-widget
+                        li
+                          img.alignleft.pic(src='images/blog/rp1.jpg', alt='')
+                          h4
+                            a(href='#') Lorem ipsum 
+                          span.smalldate August 27, 2012
+                          span.clear
+                        li
+                          img.alignleft.pic(src='images/blog/rp2.jpg', alt='')
+                          h4
+                            a(href='#') Lorem ipsum
+                          span.smalldate August 22, 2012
+                          span.clear
+                        li
+                          img.alignleft.pic(src='images/blog/rp3.jpg', alt='')
+                          h4
+                            a(href='#') Lorem ipsum
+                          span.smalldate August 20, 2012
+                          span.clear
+                    li.widget-container
+                      h3.color_yellow Categories
+                      ul
+                        li
+                          a(href='#') Clean
+                        li
+                          a(href='#') Portfolio
+                        li
+                          a(href='#') General
+                        li
+                          a(href='#') Video
+                        li
+                          a(href='#') Typography
+                    li.widget-container
+                      h3.color_yellow Text Widget
+                      .textwidget
+                        | Pellentesque at mauris fringilla nunc sollicitudin vehicula. Aliquam et nibh ipsum, vel porta augue. Sed dolor ligula, facilisis.
+          .scrollbar.scrollbar2
+            .track
+              .thumb.thumb2
+    // BLOG ENG
+    // CONTACT
+    li#page_contact
+      a.close(href='#!/page_home')
+      .container
+        .wrapper
+          h1.color_yellow Contact Us
+          article.one_half
+            h2.color_white Reach to Us!
+            p
+              | Praesent vestibulum molestie lacus. Aenean non ummy hendrerit mauris. Phasellus rta. Fusce suscipit varius mium sociis natoque penatibus.
+            p.color_white
+              | 8901 Abort Road,
+              br
+              | London, D01 23GB.
+            p
+              span.w1 Mobile:
+              | +1 234 567 8900
+              br
+              span.w1 Telephone:
+              | +1 234 567 8900
+              br
+              span.w1 FAX:
+              | +1 234 567 8900
+              br
+              | E-mail:
+              a.link(href='#', style='font-weight:normal;') info@dummylink.com
+          article.one_half_last
+            h2.color_white Get in Touch!
+            form#form1
+              .success
+                | Contact form submitted!
+                br
+                strong We will be in touch soon.
+              fieldset
+                label.name
+                  input(type='text', value='Name:')
+                  span.error *This is not a valid name.
+                  span.empty *This field is required.
+                br
+                label.email
+                  input(type='email', value='Email:')
+                  span.error *This is not a valid email address.
+                  span.empty *This field is required.
+                br
+                label.message
+                  textarea MESSAGE:
+                  span.error *The message is too short.
+                  span.empty *This field is required.
+                br.clear
+                .btns
+                  a.button.small.yellow(href='#', data-type='reset')
+                    span Clear
+                  a.button.small.yellow(href='#', data-type='submit')
+                    span Send
+    // CONTACT END
+    // MORE
+    li#page_more
+      a.close(href='#!/page_home')
+      .container
+        .wrapper
+          h2.color_white lorem ipsum
+          p.pad6
+            span.color_white Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            br
+            | Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo.
+          p.pad7
+            span.color_white Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. 
+            br
+            | Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna.
+          p.pad7
+            span.color2 Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. 
+            br
+            | Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna.
+    // MORE END
+  // FOOTER
+  footer
+    ul.sn
+      li
+        a(href='#', title='Facebook')
+          span.icon-img(style='background:url(images/social/facebook.png)')
+      li
+        a(href='#', title='Twitter')
+          span.icon-img(style='background:url(images/social/twitter.png)')
+      li
+        a(href='#', title='Google Plus')
+          span.icon-img(style='background:url(images/social/gplus.png)')
+      li
+        a(href='#', title='YouTube')
+          span.icon-img(style='background:url(images/social/ytube.png)')
+    p
+      | 2012 ©
+      a.link(href='#') PizzeriA
+      | . All Right Reserved. Collect from
+      a(href='http://www.cssmoban.com/', title='网站模板', target='_blank') 网站模板
+  // END FOOTER
+// END CONTENT
