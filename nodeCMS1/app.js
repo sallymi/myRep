@@ -38,6 +38,7 @@ app.get('/menu/add',menu.menuAdd);
 app.post('/menu/add',menu.doMenuAdd);
 app.get('/menu/:name',menu.menuAdd);
 app.get('/menu/json/:name',menu.menuJSON);
+app.get('/menu/show/:name',menu.menuList);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

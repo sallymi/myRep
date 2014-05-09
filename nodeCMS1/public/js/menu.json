@@ -1,34 +1,184 @@
+[{
+"name": "ABOUT US",
+"type": "about",
+"description":"About Us",
+"test": [{
+"_name": "Who We Are",
+"_type": "about",
+"_description": "We are ...",
+"brief": "We are ...",
+"image": "/image/01.jpg"
+},
 {
- "data" : [
- {
- "name": "ABOUT US",
- "type": "about",
- "description":"About Us"
+"_name": "JHON /CEO",
+"_type": "team",
+"_description": "He is CEO",
+"brief": "CEO",
+"image": "/image/01.jpg"
+},
+{
+"_name": "JANE /CHIEF",
+"_type": "team",
+"_description": "SHe is CHIEF",
+"brief": "CHIEF",
+"image": "/image/01.jpg"
+},
+{
+"_name": "JUDY /CEO",
+"_type": "team",
+"_description": "SHe is CEO",
+"brief": "CEO",
+"image": "/image/01.jpg"
+},
+{
+"_name": "BEN /CFO",
+"_type": "team",
+"_description": "He is CFO",
+"brief": "CFO",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "SERVICES",
+"type": "services",
+"description":"services",
+"test": [{
+"_name": "Services",
+"_type": "about",
+"_description": "Weâ€™ll help you see things from a whole new perspective, Your recipe for success!",
+"brief": "Weâ€™ll help you see things from a whole new perspective, Your recipe for success!",
+"image": "/image/01.jpg"
  },
  {
-  "name": "SERVICES",
-  "type": "services",
-  "description":"services"
- },
-  {
-   "name": "PORTFOLIO",
-   "type": "protfolio",
-   "description":"protfolio"
-  },
-   {
-    "name": "PRICE",
-    "type": "price",
-    "description":"price"
-   },
-    {
-     "name": "BLOG",
-     "type": "blog",
-     "description":"blog"
-    },
-    {
-        "name": "CONTACT",
-        "type": "contact",
-        "description":"contact"
-    }
- ]
-}
+"_name": "Fruits & Vegetables",
+"_type": "services",
+"_description": "We have Fruits & Vegetables",
+"brief": "We have Fruits & Vegetables",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Breakfast",
+"_type": "services",
+"_description": "We have Breakfast",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"_name": "BBQ & Grilling",
+"_type": "services",
+"_description": "We have BBQ & Grilling",
+"brief": "We have BBQ & Grilling",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Fruits & Vegetables",
+"_type": "services",
+"_description": "We have Fruits & Vegetables",
+"brief": "We have Fruits & Vegetables",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Breakfast",
+"_type": "services",
+"_description": "We have Breakfast",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"_name": "BBQ & Grilling",
+"_type": "services",
+"_description": "We have BBQ & Grilling",
+"brief": "We have BBQ & Grilling",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "PORTFOLIO",
+"type": "protfolio",
+"description":"protfolio",
+"test": [{
+"_name": "Portfolio",
+"_type": "about",
+"_description": "",
+"brief": "",
+"image": ""
+},
+{
+"_name": "Salads",
+"_type": "profile",
+"_description": "We have Salad",
+"brief": "Salad is",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Drinks",
+"_type": "profile",
+"_description": "We have Drinks",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Chicken",
+"_type": "profile",
+"_description": "We have Chicken",
+"brief": "We have Chicken",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Salads",
+"_type": "profile",
+"_description": "We have Salad",
+"brief": "Salad is",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Drinks",
+"_type": "profile",
+"_description": "We have Drinks",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"_name": "Chicken",
+"_type": "profile",
+"_description": "We have Chicken",
+"brief": "We have Chicken",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "PRICE",
+"type": "price",
+"description":"price",
+"test":[{
+"_name": "Chicken",
+"_type": "profile",
+"_description": "We have Chicken",
+"brief": "We have Chicken",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "BLOG",
+"type": "blog",
+"description":"blog",
+"test":[{
+"_name": "",
+"_type": "",
+"_description":"",
+"brief":"",
+"image":""
+}]
+},
+{
+"name": "CONTACT",
+"type": "contact",
+"description":"contact",
+"test":[{
+"_name": "",
+"_type": "",
+"_description":"",
+"brief":"",
+"image":""
+}]
+}]

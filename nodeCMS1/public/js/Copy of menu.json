@@ -1,0 +1,184 @@
+[{
+"name": "ABOUT US",
+"type": "about",
+"description":"About Us",
+"test": [{
+"name": "Who We Are",
+"type": "about",
+"description": "We are ...",
+"brief": "We are ...",
+"image": "/image/01.jpg"
+},
+{
+"name": "JHON /CEO",
+"type": "team",
+"description": "He is CEO",
+"brief": "CEO",
+"image": "/image/01.jpg"
+},
+{
+"name": "JANE /CHIEF",
+"type": "team",
+"description": "SHe is CHIEF",
+"brief": "CHIEF",
+"image": "/image/01.jpg"
+},
+{
+"name": "JUDY /CEO",
+"type": "team",
+"description": "SHe is CEO",
+"brief": "CEO",
+"image": "/image/01.jpg"
+},
+{
+"name": "BEN /CFO",
+"type": "team",
+"description": "He is CFO",
+"brief": "CFO",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "SERVICES",
+"type": "services",
+"description":"services",
+"test": [{
+"name": "Services",
+"type": "about",
+"description": "We’ll help you see things from a whole new perspective, Your recipe for success!",
+"brief": "We’ll help you see things from a whole new perspective, Your recipe for success!",
+"image": "/image/01.jpg"
+ },
+ {
+"name": "Fruits & Vegetables",
+"type": "services",
+"description": "We have Fruits & Vegetables",
+"brief": "We have Fruits & Vegetables",
+"image": "/image/01.jpg"
+},
+{
+"name": "Breakfast",
+"type": "services",
+"description": "We have Breakfast",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"name": "BBQ & Grilling",
+"type": "services",
+"description": "We have BBQ & Grilling",
+"brief": "We have BBQ & Grilling",
+"image": "/image/01.jpg"
+},
+{
+"name": "Fruits & Vegetables",
+"type": "services",
+"description": "We have Fruits & Vegetables",
+"brief": "We have Fruits & Vegetables",
+"image": "/image/01.jpg"
+},
+{
+"name": "Breakfast",
+"type": "services",
+"description": "We have Breakfast",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"name": "BBQ & Grilling",
+"type": "services",
+"description": "We have BBQ & Grilling",
+"brief": "We have BBQ & Grilling",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "PORTFOLIO",
+"type": "protfolio",
+"description":"protfolio",
+"test": [{
+"name": "Portfolio",
+"type": "about",
+"description": "",
+"brief": "",
+"image": ""
+},
+{
+"name": "Salads",
+"type": "profile",
+"description": "We have Salad",
+"brief": "Salad is",
+"image": "/image/01.jpg"
+},
+{
+"name": "Drinks",
+"type": "profile",
+"description": "We have Drinks",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"name": "Chicken",
+"type": "profile",
+"description": "We have Chicken",
+"brief": "We have Chicken",
+"image": "/image/01.jpg"
+},
+{
+"name": "Salads",
+"type": "profile",
+"description": "We have Salad",
+"brief": "Salad is",
+"image": "/image/01.jpg"
+},
+{
+"name": "Drinks",
+"type": "profile",
+"description": "We have Drinks",
+"brief": "We have Breakfast",
+"image": "/image/01.jpg"
+},
+{
+"name": "Chicken",
+"type": "profile",
+"description": "We have Chicken",
+"brief": "We have Chicken",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "PRICE",
+"type": "price",
+"description":"price",
+"test":[{
+"name": "Chicken",
+"type": "profile",
+"description": "We have Chicken",
+"brief": "We have Chicken",
+"image": "/image/01.jpg"
+}]
+},
+{
+"name": "BLOG",
+"type": "blog",
+"description":"blog",
+"test":[{
+"name": "",
+"type": "",
+"description":"",
+"brief":"",
+"image":""
+}]
+},
+{
+"name": "CONTACT",
+"type": "contact",
+"description":"contact",
+"test":[{
+"name": "",
+"type": "",
+"description":"",
+"brief":"",
+"image":""
+}]
+}]

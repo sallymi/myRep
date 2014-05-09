@@ -15,12 +15,10 @@ exports.menuAdd = function(req, res) {
 	}
 };
 exports.doMenuAdd = function(req, res) {
-	console.log(req.body.content);
-	var json = req.body.content;
+	var json = req.body;
 	var canAdd = false;
+	console.log(json);
 	Menu.findByName(json.name, function(err, obj){
-		console.log("obj");
-		console.log(obj);
 		if(obj == null)
 			canAdd = true;
 		if(canAdd == false){//update
@@ -46,4 +44,7 @@ exports.getMenus = function(req,res) {
 	Menu.findAll(function(err, obj){
 		res.render('admin/config_listMenu', { menuList:obj });
 	});	
+};
+exports.menuList = function(req, res) {
+	
 };
