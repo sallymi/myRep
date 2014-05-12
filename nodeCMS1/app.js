@@ -36,7 +36,6 @@ app.get('/config', admin.index);
 app.get('/menus/:id', menu.getMenus);
 app.get('/menu/add',menu.menuAdd);
 app.post('/menu/add',menu.doMenuAdd);
-app.get('/menu/:name',menu.menuAdd);
 app.get('/menu/json/:name',menu.menuJSON);
 app.get('/menu/show/:name',menu.menuList);
 

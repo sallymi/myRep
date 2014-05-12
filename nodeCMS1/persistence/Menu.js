@@ -21,6 +21,12 @@ MenuDAO.prototype.save = function(obj, callback) {
 		callback(err);
 	});
 };
+MenuDAO.prototype.update = function(obj, callback) {
+	var instance = new Menu(obj);
+	instance.update(function(err){
+		callback(err);
+	});
+};
 MenuDAO.prototype.findByName = function(name, callback) {
 	Menu.findOne({name:name}, function(err, obj){
 	callback(err, obj);

@@ -3,17 +3,9 @@ block content
   nav.adminToolbar
       ul#adminToolbar-menu.menu.admin-toolbar.toolbar
         li#list-menu-item.adminToolbar-menu-item
-          a.adminToolbar-menu-link(href='/content/', title='List all ...')
+          a.adminToolbar-menu-link(href='/menus/hw', title='List all ...')
             | List
             i.icon-list-2
-        li#show-menu-item.adminToolbar-menu-item
-          a.adminToolbar-menu-link(href='/content/show/53684fe1697d4fd00e000001', title='Show current ...')
-            | View
-            i.icon-eye
-        li#edit-menu-item.adminToolbar-menu-item-selected
-          a.adminToolbar-menu-link-selected(href='/content/edit/53684fe1697d4fd00e000001', title='Edit content ...')
-            | Edit
-            i.icon-pencil-2
         li#delete-menu-item.adminToolbar-menu-item
           a.adminToolbar-menu-link(href='/content/delete/53684fe1697d4fd00e000001', title='Delete content ...')
             | Delete
@@ -22,8 +14,7 @@ block content
   article.admin-body.row
     // PAGE_BODY_START
     article.content
-      form#content-form(name='content-form', method='POST', enctype='multipart/form-data', action='/content/53684fe1697d4fd00e000001')
-        input(type='hidden', value='content-form', name='form[id]')
+      form#content-form(name='content-form')
         legend Edit Content ...
         .form-container
           nav
@@ -33,19 +24,57 @@ block content
           fieldset.form-fields.tab-container
             section#form-section-content.tab-content
               h3 Content
-              each key, prop in menuProp
-                div(id='content_'+prop+'-wrapper').form-item.field-type-text
-                  .form-field.row
-                    label(for='content_'+prop)=prop
-                    input(id='content_'+prop).text(type='text', name='"content_"+prop', placeholder='Ex. How to Bake a Cake', required='required', value=key)
-                  span.description.text-description="Permanently modify the value of "+prop        
+              each prop, key in menuProp
+                if(key!='_id' && key!='__v')
+                  if(!Array.isArray(prop))                   
+                    div(id='content_'+key+'-wrapper').form-item.field-type-text
+                      .form-field.row
+                        label(for='content_'+key)=key
+                        if(key=='type' || key=='name')
+                          input(id='content_'+key).text(type='text', name='"content_"+key', placeholder='', required='required', disabled, value=prop)
+                        else
+                          input(id='content_'+key).text(type='text', name='"content_"+key', placeholder='', value=prop)
+                      span.description.text-description="Permanently modify the value of "+prop
+                  else
+                    each subProp, index in prop     
+                      each _prop, _Key in subProp
+                        if(_Key!='_id' && _Key!='__v')  
+                          div(id='content_'+_Key+'-wrapper').form-item.field-type-text
+                          .form-field.row
+                            label(for='content_'+_Key)=_Key
+                            if(_Key=='_type')
+                              input(id='content_'+_Key).text(type='text', name='"content_"+_Key', placeholder='', required='required', disabled, value=_prop)
+                            else
+                              input(id='content_'+_Key).text(type='text', name='"content_"+_Key', placeholder='', value=_prop)
+                          span.description.text-description="Permanently modify the value of "+_prop      
             input#returnTo.hidden(type='hidden', name='returnTo', value='')
             .row.actions
-              input#submit.submit(type='submit', name='submit', value='Save Content')
-              input#cancel.button(type='button', name='cancel', onclick='window.location="/content"', ;='', value='Cancel')
+              input#submit.button(type='button', name='submit', value='Save Content')
+              input#cancel.button(type='button', name='cancel', onclick='window.location="/menus/hw"', value='Cancel')
     // PAGE_BODY_END
   footer.row
     // Admin Footer
     .col1
       | Administration
     script
+  script.
+    $('#submit').click(function(){
+      var json = {};
+      json["data"]={}
+      for(var i=0;i<$("input[id^=content_]").length;i++){
+        if($("input[id^=content_]")[i].id != "content_name")
+          json["data"][$("input[id^=content_]")[i].id.split("content_")[1]]=$("input[id^=content_]")[i].value; 
+        else
+          json["name"]= $("input[id^=content_]")[i].value;      
+      }
+      alert(JSON.stringify(json));
+      $.ajax({
+        type: 'POST',
+        url: '/menu/add',
+        data: JSON.stringify(json),
+        contentType: "application/json",
+        dataType: 'json'
+      }).done(function(resp){
+      }).fail(function(err) {
+      });
+    });

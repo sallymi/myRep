@@ -17,12 +17,19 @@ exports.menuAdd = function(req, res) {
 exports.doMenuAdd = function(req, res) {
 	var json = req.body;
 	var canAdd = false;
+	console.log("json");
 	console.log(json);
 	Menu.findByName(json.name, function(err, obj){
 		if(obj == null)
 			canAdd = true;
 		if(canAdd == false){//update
-			res.send({'success':true});
+			Menu.update(json.data, function(err){
+				if(err) {
+					res.send({'success':false,'err':err});
+				} else {
+					res.send({'success':true});
+				}
+			});
 		} else {//insert
 			Menu.save(json, function(err){
 				if(err) {
@@ -48,6 +55,7 @@ exports.getMenus = function(req,res) {
 exports.menuList = function(req, res) {
 	Menu.findByType(req.params.name,function(err, obj){
 		console.log(obj);
-		res.render('admin/config_editMenu', { menuProp:obj });
+		res.render('admin/config_editMenu', { menuProp:obj.toObject(), title:req.params.name});
 	});
 };
+
