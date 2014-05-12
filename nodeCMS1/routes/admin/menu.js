@@ -46,5 +46,8 @@ exports.getMenus = function(req,res) {
 	});	
 };
 exports.menuList = function(req, res) {
-	
+	Menu.findByType(req.params.name,function(err, obj){
+		console.log(obj);
+		res.render('admin/config_editMenu', { menuProp:obj });
+	});
 };

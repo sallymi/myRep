@@ -4,6 +4,7 @@ var MenuSchema = new Schema({
 	name : String,
 	type : String,
 	description : String,
+	href : String,
 	test : [{
 	_name : String,
 	_type : String,
@@ -22,6 +23,11 @@ MenuDAO.prototype.save = function(obj, callback) {
 };
 MenuDAO.prototype.findByName = function(name, callback) {
 	Menu.findOne({name:name}, function(err, obj){
+	callback(err, obj);
+	});
+};
+MenuDAO.prototype.findByType = function(name, callback) {
+	Menu.findOne({type:name}, function(err, obj){
 	callback(err, obj);
 	});
 };

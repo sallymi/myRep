@@ -1,0 +1,51 @@
+extends base
+block content
+  nav.adminToolbar
+      ul#adminToolbar-menu.menu.admin-toolbar.toolbar
+        li#list-menu-item.adminToolbar-menu-item
+          a.adminToolbar-menu-link(href='/content/', title='List all ...')
+            | List
+            i.icon-list-2
+        li#show-menu-item.adminToolbar-menu-item
+          a.adminToolbar-menu-link(href='/content/show/53684fe1697d4fd00e000001', title='Show current ...')
+            | View
+            i.icon-eye
+        li#edit-menu-item.adminToolbar-menu-item-selected
+          a.adminToolbar-menu-link-selected(href='/content/edit/53684fe1697d4fd00e000001', title='Edit content ...')
+            | Edit
+            i.icon-pencil-2
+        li#delete-menu-item.adminToolbar-menu-item
+          a.adminToolbar-menu-link(href='/content/delete/53684fe1697d4fd00e000001', title='Delete content ...')
+            | Delete
+            i.icon-trashcan
+  aside#messages.row
+  article.admin-body.row
+    // PAGE_BODY_START
+    article.content
+      form#content-form(name='content-form', method='POST', enctype='multipart/form-data', action='/content/53684fe1697d4fd00e000001')
+        input(type='hidden', value='content-form', name='form[id]')
+        legend Edit Content ...
+        .form-container
+          nav
+            ul.tabs
+              li.form-tab.first
+                a(href='#form-section-content') Content
+          fieldset.form-fields.tab-container
+            section#form-section-content.tab-content
+              h3 Content
+              each key, prop in menuProp
+                div(id='content_'+prop+'-wrapper').form-item.field-type-text
+                  .form-field.row
+                    label(for='content_'+prop)=prop
+                    input(id='content_'+prop).text(type='text', name='"content_"+prop', placeholder='Ex. How to Bake a Cake', required='required', value=key)
+                  span.description.text-description="Permanently modify the value of "+prop        
+            input#returnTo.hidden(type='hidden', name='returnTo', value='')
+            .row.actions
+              input#submit.submit(type='submit', name='submit', value='Save Content')
+              input#cancel.button(type='button', name='cancel', onclick='window.location="/content"', ;='', value='Cancel')
+    // PAGE_BODY_END
+  footer.row
+    // Admin Footer
+    .col1
+      | Administration
+    script

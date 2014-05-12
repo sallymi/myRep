@@ -1,47 +1,63 @@
-[{
+[
+{
+"name": "HOME",
+"type": "home",
+"description":"contact",
+"href": "page_home",
+"test":[{
+"_name": "",
+"_type": "",
+"_description":"",
+"brief":"",
+"image":""
+}]
+},
+{
 "name": "ABOUT US",
 "type": "about",
 "description":"About Us",
+"href":"page_about",
 "test": [{
 "_name": "Who We Are",
 "_type": "about",
 "_description": "We are ...",
 "brief": "We are ...",
-"image": "/image/01.jpg"
+"image": "images/about/pic1.jpg"
 },
 {
 "_name": "JHON /CEO",
 "_type": "team",
 "_description": "He is CEO",
 "brief": "CEO",
-"image": "/image/01.jpg"
+"image": "images/about/pic2.jpg"
 },
 {
 "_name": "JANE /CHIEF",
 "_type": "team",
 "_description": "SHe is CHIEF",
 "brief": "CHIEF",
-"image": "/image/01.jpg"
+"image": "images/about/pic3.jpg"
 },
 {
 "_name": "JUDY /CEO",
 "_type": "team",
 "_description": "SHe is CEO",
 "brief": "CEO",
-"image": "/image/01.jpg"
+"image": "images/about/pic4.jpg"
 },
 {
 "_name": "BEN /CFO",
 "_type": "team",
 "_description": "He is CFO",
 "brief": "CFO",
-"image": "/image/01.jpg"
+"image": "images/about/pic5.jpg"
 }]
 },
 {
 "name": "SERVICES",
 "type": "services",
 "description":"services",
+"href":"page_services",
 "test": [{
 "_name": "Services",
 "_type": "about",
@@ -96,6 +112,7 @@
 "name": "PORTFOLIO",
 "type": "protfolio",
 "description":"protfolio",
+"href":"page_portfolio",
 "test": [{
 "_name": "Portfolio",
 "_type": "about",
@@ -150,6 +167,7 @@
 "name": "PRICE",
 "type": "price",
 "description":"price",
+"href":"page_prices",
 "test":[{
 "_name": "Chicken",
 "_type": "profile",
@@ -162,6 +180,7 @@
 "name": "BLOG",
 "type": "blog",
 "description":"blog",
+"href":"page_blog",
 "test":[{
 "_name": "",
 "_type": "",
@@ -174,6 +193,7 @@
 "name": "CONTACT",
 "type": "contact",
 "description":"contact",
+"href":"page_contact",
 "test":[{
 "_name": "",
 "_type": "",

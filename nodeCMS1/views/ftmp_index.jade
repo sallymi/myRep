@@ -49,86 +49,44 @@ section#content
     // MENU
     nav.menu
       ul#menu
-        li
-          a(href='#!/page_home') Home
-        li
-          a(href='#!/page_about') About Us
-          ul.submenu_1
-            li
-              a(href='#!/page_more') Profile
-            li
-              a(href='#!/page_more') Mission
-        li
-          a(href='#!/page_services') Services
-        li
-          a(href='#!/page_portfolio') Portfolio
-        li
-          a(href='#!/page_prices') Prices
-        li
-          a(href='#!/page_blog') Blog
-        li.no_bg
-          a(href='#!/page_contact') Contacts
+        each menu in menuList
+          li
+            a(href='#!/'+menu.href)=menu.name
     // END MENU
   // END HEADER
   .inner_copyright
-    | Collect from
-    a(href='http://www.cssmoban.com/', target='_blank', title='网页模板') 网页模板
   ul
-    li#page_home.no_bg
-    // ABOUT
-    li#page_about
-      a.close(href='#!/page_home')
-      .container
-        .wrapper
-          h1.color_yellow About Us
-          .viewport.viewport2
-            .overview.overview2
-              .fullwidth
-                img.fleft20.pic(src='images/about/pic1.jpg', alt='')
-                h4.color_white Who We Are
-                p
-                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                  a.link(href='#') eiusmod tempor
-                  | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                p
-                  | Excepteur sint occaecat cupidatat
-                  a.link(href='#') non proident
-                  | , sunt in culpa qui officia deserunt mollit anim id est laborum.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .divider
-              h2.color_yellow Meet the Team
-              .one_fourth
-                img.pic(src='images/about/pic2.jpg', alt='')
-                h5.color_white.ucase John Deo/CEO
-                p
-                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .one_fourth
-                img.pic(src='images/about/pic3.jpg', alt='')
-                h5.color_white.ucase Jane Deo/CHIEF
-                p
-                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .one_fourth
-                img.pic(src='images/about/pic4.jpg', alt='')
-                h5.color_white.ucase John Deo/CEO
-                p
-                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .one_fourth_last
-                img.pic(src='images/about/pic5.jpg', alt='')
-                h5.color_white.ucase Jane Deo/CHIEF
-                p
-                  | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-          .scrollbar.scrollbar2
-            .track
-              .thumb.thumb2
+    each menu in menuList
+      if(menu.type == "home")
+        li(id=menu.href).no_bg
+      if(menu.type == "about")
+        li(id=menu.href)
+          a.close(href='#!/page_home')
+          .container
+          .wrapper
+            h1.color_yellow About Us
+            .viewport.viewport2
+              .overview.overview2
+                .fullwidth
+                  console.log(menu.test)
+                  -var about_menu=menu.test.filter(function(item){return item._type=="about";})
+                  img.fleft20.pic(src=about_menu[0].image, alt='')
+                  h4.color_white=about_menu[0]._name
+                  p=about_menu[0]._description
+                  a.button.small.yellow(href='#!/page_more')
+                    span more
+                  .divider
+                h2.color_yellow Meet the Team
+                each member in menu.test.filter(function(item){return item._type=="team";})
+                    .one_fourth
+                      img.pic(src=member.image, alt='')
+                      h5.color_white.ucase=member._name
+                      p=member._description
+                      a.button.small.yellow(href='#!/page_more')
+                        span more
+            .scrollbar.scrollbar2
+              .track
+                .thumb.thumb2
     // ABOUT END
     // SERVICES
     li#page_services
@@ -539,8 +497,7 @@ section#content
           span.icon-img(style='background:url(images/social/ytube.png)')
     p
       | 2012 ©
-      a.link(href='#') PizzeriA
-      | . All Right Reserved. Collect from
-      a(href='http://www.cssmoban.com/', title='网站模板', target='_blank') 网站模板
+      a.link(href='#') Hello World
+      | . All Right Reserved.
   // END FOOTER
 // END CONTENT

@@ -20,7 +20,7 @@ block content
           each menu in menuList
             tr.content-list-item.content-list-item-published.content-type-Block.Content
               td
-                a(href='/menu/show/'+menu.name)=menu.name
+                a(href='/menu/show/'+menu.type)=menu.name
               td=menu.type
               td=menu.description
     // PAGE_BODY_END
