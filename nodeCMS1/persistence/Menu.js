@@ -22,8 +22,15 @@ MenuDAO.prototype.save = function(obj, callback) {
 	});
 };
 MenuDAO.prototype.update = function(obj, callback) {
-	var instance = new Menu(obj);
-	instance.update(function(err){
+//	var instance = new Menu(obj);
+//	var upsertData = instance.toObject();
+//	console.log(upsertData);
+//	delete upsertData._id;
+//	Menu.update({_id: instance.id}, upsertData, {upsert: true}, function(err){
+//		callback(err);
+//	});
+	var query = {name: obj.name};
+	Menu.findOneAndUpdate(query, obj, {"new": false}, function(err){
 		callback(err);
 	});
 };

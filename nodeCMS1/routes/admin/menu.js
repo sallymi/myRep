@@ -23,7 +23,7 @@ exports.doMenuAdd = function(req, res) {
 		if(obj == null)
 			canAdd = true;
 		if(canAdd == false){//update
-			Menu.update(json.data, function(err){
+			Menu.update(json, function(err){
 				if(err) {
 					res.send({'success':false,'err':err});
 				} else {

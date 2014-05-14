@@ -31,21 +31,22 @@ block content
                       .form-field.row
                         label(for='content_'+key)=key
                         if(key=='type' || key=='name')
-                          input(id='content_'+key).text(type='text', name='"content_"+key', placeholder='', required='required', disabled, value=prop)
+                          input(id='content_'+key, father='').text(type='text', name='"content_"+key', placeholder='', required='required', disabled, value=prop)
                         else
-                          input(id='content_'+key).text(type='text', name='"content_"+key', placeholder='', value=prop)
+                          input(id='content_'+key, father='').text(type='text', name='"content_"+key', placeholder='', value=prop)
                       span.description.text-description="Permanently modify the value of "+prop
                   else
+                    input(id='testSize', value=prop.length, hidden)
                     each subProp, index in prop     
                       each _prop, _Key in subProp
                         if(_Key!='_id' && _Key!='__v')  
-                          div(id='content_'+_Key+'-wrapper').form-item.field-type-text
+                          div(id='content_'+key+'_'+index+'_'+_Key+'-wrapper').form-item.field-type-text
                           .form-field.row
-                            label(for='content_'+_Key)=_Key
+                            label(for='content_'+key+'_'+index+'_'+_Key)=_Key
                             if(_Key=='_type')
-                              input(id='content_'+_Key).text(type='text', name='"content_"+_Key', placeholder='', required='required', disabled, value=_prop)
+                              input(id='content_'+_Key, father=key, index=index).text(type='text', name='content_'+key+'_'+index+'_'+_Key, placeholder='', required='required', disabled, value=_prop)
                             else
-                              input(id='content_'+_Key).text(type='text', name='"content_"+_Key', placeholder='', value=_prop)
+                              input(id='content_'+_Key, father=key, index=index).text(type='text', name='content_'+key+'_'+index+'_'+_Key, placeholder='', value=_prop)
                           span.description.text-description="Permanently modify the value of "+_prop      
             input#returnTo.hidden(type='hidden', name='returnTo', value='')
             .row.actions
@@ -60,12 +61,18 @@ block content
   script.
     $('#submit').click(function(){
       var json = {};
-      json["data"]={}
-      for(var i=0;i<$("input[id^=content_]").length;i++){
-        if($("input[id^=content_]")[i].id != "content_name")
-          json["data"][$("input[id^=content_]")[i].id.split("content_")[1]]=$("input[id^=content_]")[i].value; 
-        else
-          json["name"]= $("input[id^=content_]")[i].value;      
+      json["test"]=[];
+      var testSize = parseInt($('#testSize').val());
+      for(var i=0;i<$('input[id^=content_][father=""]').length;i++){       
+          json[$('input[id^=content_][father=""]')[i].id.split("content_")[1]]=$('input[id^=content_][father=""]')[i].value;              
+      }
+      for(var i=0;i<testSize;i++){  
+         var temp = {}; 
+         var index=i+"";
+         for(var j=0;j<$('input[id^=content_][father="test"][index='+index+']').length;j++){
+           temp[$('input[id^=content_][father="test"][index='+index+']')[j].id.split("content_")[1]]=$('input[id^=content_][father="test"][index='+index+']')[j].value;
+         }    
+         json["test"].push(temp);              
       }
       alert(JSON.stringify(json));
       $.ajax({
