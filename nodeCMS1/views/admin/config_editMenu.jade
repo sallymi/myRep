@@ -52,6 +52,7 @@ block content
             .row.actions
               input#submit.button(type='button', name='submit', value='Save Content')
               input#cancel.button(type='button', name='cancel', onclick='window.location="/menus/hw"', value='Cancel')
+              input#addBtn.button(type='button', name='add', value='Add one item')
     // PAGE_BODY_END
   footer.row
     // Admin Footer
@@ -59,6 +60,9 @@ block content
       | Administration
     script
   script.
+    $('#addBtn').click(function(){
+      $('#form-section-content').append('<div class="form-item field-type-text"><div class="form-field row"><label>href</label><input></input></div></div>');
+    });
     $('#submit').click(function(){
       var json = {};
       json["test"]=[];

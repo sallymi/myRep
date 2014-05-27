@@ -15,7 +15,7 @@ var express = require('express')
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3002);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -30,7 +30,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get('/:name', routes.index);
 app.get('/users', user.list);
 app.get('/config', admin.index);
 app.get('/menus/:id', menu.getMenus);
@@ -38,6 +38,7 @@ app.get('/menu/add',menu.menuAdd);
 app.post('/menu/add',menu.doMenuAdd);
 app.get('/menu/json/:name',menu.menuJSON);
 app.get('/menu/show/:name',menu.menuList);
+app.get('/menu/steak/food',routes.food);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

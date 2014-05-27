@@ -64,7 +64,7 @@ section#content
           a.close(href='#!/page_home')
           .container
           .wrapper
-            h1.color_yellow About Us
+            h1.color_yellow=menu.name
             .viewport.viewport2
               .overview.overview2
                 .fullwidth
@@ -87,220 +87,88 @@ section#content
             .scrollbar.scrollbar2
               .track
                 .thumb.thumb2
-    // ABOUT END
-    // SERVICES
-    li#page_services
-      a.close(href='#!/page_home')
-      .container
-        .wrapper
-          h1.color_yellow Services
-          .viewport.viewport2
-            .overview.overview2
-              .fullwidth
-                h1.color_white We’ll help you see things from a whole new perspective, Your recipe for success!
-              .divider
-              .one_third
-                .serimg
-                  img.pic(src='images/services/pic1.jpg', alt='')
-                h5.color_white.ucase Fruits & Vegetables
-                p
-                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+            // ABOUT END
+      // SERVICES
+      if(menu.type == "services")
+        li(id=menu.href)
+          a.close(href='#!/page_home')
+          .container
+            .wrapper
+              h1.color_yellow=menu.name
+              .viewport.viewport2
+                .overview.overview2
+                  .fullwidth
+                    h1.color_white=menu.description
+                  .divider
+                  each member in menu.test.filter(function(item){return item._type=="services";})
+                    .one_third
+                      .serimg
+                        img.pic(src=member.image, alt='')
+                      h5.color_white.ucase=member._name
+                      p=member._description
+                      a.button.small.yellow(href='#!/page_more')
+                        span more               
+              .scrollbar.scrollbar2
+                .track
+                  .thumb.thumb2
+              // SERVICES END
+      // PORTFOLIO
+      if(menu.type == "portfolio")
+        li(id=menu.href)
+          a.close(href='#!/page_home')
+          .container
+            .wrapper
+              h1.color_yellow=menu.name
+              .viewport.viewport2
+                .overview.overview2
+                  #ts-display-portfolio
+                    ul#filter.controlnav
+                      li.segment-1.selected-1
+                        a(href='#', data-value='all') All
+                      li.segment-1
+                        a(href='#', data-value='salads') Salads
+                      li.segment-1
+                        a(href='#', data-value='drinks') Drinks
+                      li.segment-1
+                        a(href='#', data-value='chicken') Chicken
+                    ul#ts-display-pf-col.image-grid
+                      each member in menu.test.filter(function(item){return item._type=="profile";})
+                        li(class=member._name,data-id='id-')
+                          .ts-display-pf-img
+                            span.pftag=member._name
+                            img.cover(src=member.image, alt='')
+                            .caption_slide
+                              p=member._description
+                              a.button.small.yellow(href='#!/page_more')
+                                span more                     
+              .scrollbar.scrollbar2
+                .track
+                  .thumb.thumb2
+              // PORTFOLIO END
+              // PRICE
+      if(menu.type == "price")
+        li(id=menu.href)
+          a.close(href='#!/page_home')
+          .container
+            .wrapper
+              h1.color_yellow=menu.name
+              .two_third
+                .priceimg
+                -var about_menu=menu.test.filter(function(item){return item._type=="about";})
+                  img.pic(src=about_menu[0].image, alt='')
+                h4.color_white=about_menu[0]._description
+                p=about_menu[0].bref
                 a.button.small.yellow(href='#!/page_more')
                   span more
-              .one_third
-                .serimg
-                  img.pic(src='images/services/pic2.jpg', alt='')
-                h5.color_white.ucase Breakfast
-                p
-                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .one_third_last
-                .serimg
-                  img.pic(src='images/services/pic3.jpg', alt='')
-                h5.color_white.ucase BBQ & Grilling
-                p
-                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .clear
-              .one_third
-                .serimg
-                  img.pic(src='images/services/pic1.jpg', alt='')
-                h5.color_white.ucase Fruits & Vegetables
-                p
-                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .one_third
-                .serimg
-                  img.pic(src='images/services/pic2.jpg', alt='')
-                h5.color_white.ucase Breakfast
-                p
-                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-              .one_third_last
-                .serimg
-                  img.pic(src='images/services/pic3.jpg', alt='')
-                h5.color_white.ucase BBQ & Grilling
-                p
-                  | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-                a.button.small.yellow(href='#!/page_more')
-                  span more
-          .scrollbar.scrollbar2
-            .track
-              .thumb.thumb2
-    // SERVICES END
-    // PORTFOLIO
-    li#page_portfolio
-      a.close(href='#!/page_home')
-      .container
-        .wrapper
-          h1.color_yellow Portfolio
-          .viewport.viewport2
-            .overview.overview2
-              #ts-display-portfolio
-                ul#filter.controlnav
-                  li.segment-1.selected-1
-                    a(href='#', data-value='all') All
-                  li.segment-1
-                    a(href='#', data-value='salads') Salads
-                  li.segment-1
-                    a(href='#', data-value='drinks') Drinks
-                  li.segment-1
-                    a(href='#', data-value='chicken') Chicken
-                ul#ts-display-pf-col.image-grid
-                  li.salads(data-id='id-1')
-                    .ts-display-pf-img
-                      span.pftag Salads
-                      img.cover(src='images/pf/pic1.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.drinks(data-id='id-2')
-                    .ts-display-pf-img
-                      span.pftag Drinks
-                      img.cover(src='images/pf/pic2.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.chicken.nomargin(data-id='id-3')
-                    .ts-display-pf-img
-                      span.pftag Chicken
-                      img.cover(src='images/pf/pic3.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.drinks(data-id='id-4')
-                    .ts-display-pf-img
-                      span.pftag Drinks
-                      img.cover(src='images/pf/pic2.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.chicken(data-id='id-5')
-                    .ts-display-pf-img
-                      span.pftag Chicken
-                      img.cover(src='images/pf/pic3.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.salads.nomargin(data-id='id-6')
-                    .ts-display-pf-img
-                      span.pftag Salads
-                      img.cover(src='images/pf/pic1.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.chicken(data-id='id-7')
-                    .ts-display-pf-img
-                      span.pftag Chicken
-                      img.cover(src='images/pf/pic3.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.salads(data-id='id-8')
-                    .ts-display-pf-img
-                      span.pftag Salads
-                      img.cover(src='images/pf/pic1.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.drinks.nomargin(data-id='id-9')
-                    .ts-display-pf-img
-                      span.pftag Drinks
-                      img.cover(src='images/pf/pic2.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.drinks(data-id='id-10')
-                    .ts-display-pf-img
-                      span.pftag Drinks
-                      img.cover(src='images/pf/pic2.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.salads(data-id='id-11')
-                    .ts-display-pf-img
-                      span.pftag Salads
-                      img.cover(src='images/pf/pic1.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-                  li.chicken.nomargin(data-id='id-12')
-                    .ts-display-pf-img
-                      span.pftag Chicken
-                      img.cover(src='images/pf/pic3.jpg', alt='')
-                      .caption_slide
-                        p Enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                        a.button.small.yellow(href='#!/page_more')
-                          span more
-          .scrollbar.scrollbar2
-            .track
-              .thumb.thumb2
-    // PORTFOLIO END
-    // PRICE
-    li#page_prices
-      a.close(href='#!/page_home')
-      .container
-        .wrapper
-          h1.color_yellow Price List
-          .two_third
-            .priceimg
-              img.pic(src='images/prices/pic1.jpg', alt='')
-            h4.color_white What We Offer
-            p
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              a.link(href='#') eiusmod tempor
-              | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            a.button.small.yellow(href='#!/page_more')
-              span more
-          .one_third_last
-            img.fleft20.pic(src='images/prices/pic2.jpg', alt='')
-            h4.color_white Nuts with Strawberry
-            h3.color_yellow $25.60
-            .divider
-            img.fleft20.pic(src='images/prices/pic2.jpg', alt='')
-            h4.color_white Nuts with Strawberry
-            h3.color_yellow $33.30
-            .divider
-            img.fleft20.pic(src='images/prices/pic2.jpg', alt='')
-            h4.color_white Nuts with Strawberry
-            h3.color_yellow $39.90
+              each member in menu.test.filter(function(item){return item._type=="profile";})
+                .one_third_last
+                  img.fleft20.pic(src=member.image, alt='')
+                  h4.color_white=member._name
+                  h3.color_yellow=member.bref
+                  .divider
     // PRICE END
     // BLOG
+      if(menu.type == "price")
     li#page_blog
       a.close(href='#!/page_home')
       .container
