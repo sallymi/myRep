@@ -5,23 +5,22 @@
 FROM node:9.2 as build_login
 MAINTAINER haitao yue "hightall@me.com"
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-COPY /tmp/cello/user-dashboard/js /app
-COPY /tmp/cello/user-dashboard /usr/app/src
+RUN cp -r /tmp/cello/user-dashboard/js /app
+RUN cp -r /tmp/cello/user-dashboard /usr/app/src
 RUN cd /app && npm install --loglevel http && npm run build
 
 FROM node:9.2 as build_home
 MAINTAINER haitao yue "hightall@me.com"
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-COPY /tmp/cello/user-dashboard/js /app
-COPY /tmp/cello/user-dashboard /usr/app/src
+RUN cp -r /tmp/cello/user-dashboard/js /app
+RUN cp -r /tmp/cello/user-dashboard /usr/app/src
 RUN cd /app/home && npm install --loglevel http && npm run build
 
 FROM node:9.2 as build_dashboard
 MAINTAINER haitao yue "hightall@me.com"
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-RUN cd cello
-COPY /tmp/cello/user-dashboard/js /app
-COPY /tmp/cello/user-dashboard /usr/app/src
+RUN cp -r /tmp/cello/user-dashboard/js /app
+RUN cp -r /tmp/cello/user-dashboard /usr/app/src
 RUN cd /app/dashboard && npm install --loglevel http && npm run build
 
 FROM node:9.2
@@ -32,12 +31,12 @@ COPY package.json /
 RUN cd / && yarn install -g --verbose
 ENV PATH ${PATH}:/node_modules/.bin
 RUN mkdir -p /usr/app/src
-COPY /tmp/cello/user-dashboard /usr/app/src
+RUN cp -r /tmp/cello/user-dashboard /usr/app/src
 WORKDIR /usr/app/src
 ENV FABRIC_VERSION 1.0.5
 RUN cd /tmp && wget -c https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/linux-amd64-${FABRIC_VERSION}/hyperledger-fabric-linux-amd64-${FABRIC_VERSION}.tar.gz \
 	&& tar -zxvf hyperledger-fabric-linux-amd64-${FABRIC_VERSION}.tar.gz && mv bin/configtxgen /usr/local/bin/configtxgen
-COPY /tmp/cello/user-dashboard/fabric/fabric /etc/hyperledger/fabric
+RUN cp -r /tmp/cello/user-dashboard/fabric/fabric /etc/hyperledger/fabric
 COPY --from=build_login /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
 COPY --from=build_home /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
 COPY --from=build_dashboard /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
