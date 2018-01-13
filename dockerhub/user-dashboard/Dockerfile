@@ -4,18 +4,24 @@
 #
 FROM node:9.2 as build_login
 MAINTAINER haitao yue "hightall@me.com"
+RUN git clone https://github.com/hyperledger/cello.git
+RUN cd cello
 COPY user-dashboard/js /app
 COPY user-dashboard /usr/app/src
 RUN cd /app && npm install --loglevel http && npm run build
 
 FROM node:9.2 as build_home
 MAINTAINER haitao yue "hightall@me.com"
+RUN git clone https://github.com/hyperledger/cello.git
+RUN cd cello
 COPY user-dashboard/js /app
 COPY user-dashboard /usr/app/src
 RUN cd /app/home && npm install --loglevel http && npm run build
 
 FROM node:9.2 as build_dashboard
 MAINTAINER haitao yue "hightall@me.com"
+RUN git clone https://github.com/hyperledger/cello.git
+RUN cd cello
 COPY user-dashboard/js /app
 COPY user-dashboard /usr/app/src
 RUN cd /app/dashboard && npm install --loglevel http && npm run build
@@ -23,6 +29,8 @@ RUN cd /app/dashboard && npm install --loglevel http && npm run build
 FROM node:9.2
 MAINTAINER haitao yue "hightall@me.com"
 RUN npm install -g requirejs
+RUN git clone https://github.com/hyperledger/cello.git
+RUN cd cello
 COPY user-dashboard/package.json /
 RUN cd / && yarn install -g --verbose
 ENV PATH ${PATH}:/node_modules/.bin
