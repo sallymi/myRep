@@ -14,6 +14,7 @@ FROM node:9.2 as build_home
 MAINTAINER haitao yue "hightall@me.com"
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
 RUN cp -r /tmp/cello/user-dashboard/js /app
+RUN mkdir -p /usr/app/src
 RUN cp -r /tmp/cello/user-dashboard /usr/app/src
 RUN cd /app/home && npm install --loglevel http && npm run build
 
@@ -21,6 +22,7 @@ FROM node:9.2 as build_dashboard
 MAINTAINER haitao yue "hightall@me.com"
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
 RUN cp -r /tmp/cello/user-dashboard/js /app
+RUN mkdir -p /usr/app/src
 RUN cp -r /tmp/cello/user-dashboard /usr/app/src
 RUN cd /app/dashboard && npm install --loglevel http && npm run build
 
