@@ -39,6 +39,7 @@ WORKDIR /usr/app/src
 ENV FABRIC_VERSION 1.0.5
 RUN cd /tmp && wget -c https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/linux-amd64-${FABRIC_VERSION}/hyperledger-fabric-linux-amd64-${FABRIC_VERSION}.tar.gz \
 	&& tar -zxvf hyperledger-fabric-linux-amd64-${FABRIC_VERSION}.tar.gz && mv bin/configtxgen /usr/local/bin/configtxgen
+RUN mkdir -p /etc/hyperledger/fabric
 RUN cp -r /tmp/cello/user-dashboard/fabric/fabric /etc/hyperledger/fabric
 COPY --from=build_login /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
 COPY --from=build_home /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
