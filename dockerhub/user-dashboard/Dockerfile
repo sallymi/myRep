@@ -4,21 +4,21 @@
 #
 FROM node:9.2 as build_login
 MAINTAINER haitao yue "hightall@me.com"
-RUN git clone https://github.com/hyperledger/cello.git /tmp
+RUN cd /tmp & git clone https://github.com/hyperledger/cello.git
 COPY /tmp/cello/user-dashboard/js /app
 COPY /tmp/cello/user-dashboard /usr/app/src
 RUN cd /app && npm install --loglevel http && npm run build
 
 FROM node:9.2 as build_home
 MAINTAINER haitao yue "hightall@me.com"
-RUN git clone https://github.com/hyperledger/cello.git /tmp
+RUN cd /tmp & git clone https://github.com/hyperledger/cello.git
 COPY /tmp/cello/user-dashboard/js /app
 COPY /tmp/cello/user-dashboard /usr/app/src
 RUN cd /app/home && npm install --loglevel http && npm run build
 
 FROM node:9.2 as build_dashboard
 MAINTAINER haitao yue "hightall@me.com"
-RUN git clone https://github.com/hyperledger/cello.git
+RUN cd /tmp & git clone https://github.com/hyperledger/cello.git
 RUN cd cello
 COPY /tmp/cello/user-dashboard/js /app
 COPY /tmp/cello/user-dashboard /usr/app/src
@@ -27,7 +27,7 @@ RUN cd /app/dashboard && npm install --loglevel http && npm run build
 FROM node:9.2
 MAINTAINER haitao yue "hightall@me.com"
 RUN npm install -g requirejs
-RUN git clone https://github.com/hyperledger/cello.git /tmp
+RUN cd /tmp & git clone https://github.com/hyperledger/cello.git
 COPY package.json /
 RUN cd / && yarn install -g --verbose
 ENV PATH ${PATH}:/node_modules/.bin
