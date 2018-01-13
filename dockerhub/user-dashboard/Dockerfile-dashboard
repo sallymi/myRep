@@ -1,0 +1,7 @@
+FROM node:9.2
+MAINTAINER haitao yue "hightall@me.com"
+RUN git clone https://github.com/hyperledger/cello.git
+RUN cd cello
+COPY user-dashboard/js /app
+COPY user-dashboard /usr/app/src
+RUN cd /app && npm install --loglevel http && npm run build
