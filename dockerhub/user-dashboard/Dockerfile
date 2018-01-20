@@ -30,7 +30,7 @@ FROM node:9.2
 MAINTAINER haitao yue "hightall@me.com"
 RUN npm install -g requirejs
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-RUN cp cello/user-dashboard/package.json / && yarn install -g --verbose
+RUN cp /tmp/cello/user-dashboard/package.json / && yarn install -g --verbose
 # RUN cd / && yarn install -g --verbose
 ENV PATH ${PATH}:/node_modules/.bin
 RUN mkdir -p /usr/app
