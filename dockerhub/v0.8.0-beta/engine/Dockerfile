@@ -11,6 +11,7 @@ WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip install -r requirements.txt
 
+RUN apt-get install -y wget git-core
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
 RUN cp -r /tmp/cello/src /app
 
