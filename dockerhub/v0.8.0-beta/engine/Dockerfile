@@ -15,6 +15,7 @@ RUN apt-get install -y wget git-core
 RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
 RUN cp -r /tmp/cello/src /app
 
+WORKDIR /app/src
 # use this in development
 CMD ["python", "restserver.py"]
 
