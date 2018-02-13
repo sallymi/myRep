@@ -8,6 +8,7 @@ MAINTAINER haitao yue "hightall@me.com"
 RUN git clone https://github.com/hyperledger/cello.git && \
     cd /cello && \
     git checkout master && \
+	mkdir /app && \
     cp -r /cello/src/* /app && \
     rm -rf /cello
 RUN cd /app/themes/vue/static && npm config set registry 'https://registry.npm.taobao.org' && \
