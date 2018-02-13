@@ -2,48 +2,24 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-FROM node:9.2 as build_login
+FROM node:9.2 as build_js
 MAINTAINER haitao yue "hightall@me.com"
-RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-RUN cp -r /tmp/cello/user-dashboard/js /app
-RUN mkdir -p /usr/app
-RUN cp -r /tmp/cello/user-dashboard /usr/app/src
-RUN cd /app && npm install --loglevel http && npm run build
-
-FROM node:9.2 as build_home
-MAINTAINER haitao yue "hightall@me.com"
-RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-RUN cp -r /tmp/cello/user-dashboard/js /app
-RUN mkdir -p /usr/app
-RUN cp -r /tmp/cello/user-dashboard /usr/app/src
-RUN cd /app/home && npm install --loglevel http && npm run build
-
-FROM node:9.2 as build_dashboard
-MAINTAINER haitao yue "hightall@me.com"
-RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-RUN cp -r /tmp/cello/user-dashboard/js /app
-RUN mkdir -p /usr/app
-RUN cp -r /tmp/cello/user-dashboard /usr/app/src
-RUN cd /app/dashboard && npm install --loglevel http && npm run build
-
-FROM node:9.2
-MAINTAINER haitao yue "hightall@me.com"
-RUN npm install -g requirejs
-RUN cd /tmp && git clone https://github.com/hyperledger/cello.git
-RUN cp /tmp/cello/user-dashboard/package.json / && yarn install -g --verbose
-# RUN cd / && yarn install -g --verbose
+# COPY package.json /
+RUN git clone https://github.com/hyperledger/cello.git && \
+    cd /cello && \
+    git checkout master && \
+    cp -r /cello/src/* /app && \
+    rm -rf /cello
+RUN cd /app/themes/vue/static && npm config set registry 'https://registry.npm.taobao.org' && \
+    npm install --loglevel http && npm run build
 ENV PATH ${PATH}:/node_modules/.bin
-RUN mkdir -p /usr/app
-RUN cp -r /tmp/cello/user-dashboard /usr/app/src
-WORKDIR /usr/app/src
-ENV FABRIC_VERSION 1.0.5
-RUN cd /tmp && wget -c https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/linux-amd64-${FABRIC_VERSION}/hyperledger-fabric-linux-amd64-${FABRIC_VERSION}.tar.gz \
-	&& tar -zxvf hyperledger-fabric-linux-amd64-${FABRIC_VERSION}.tar.gz && mv bin/configtxgen /usr/local/bin/configtxgen
-RUN mkdir -p /etc/hyperledger
-RUN cp -r /tmp/cello/user-dashboard/fabric/fabric /etc/hyperledger/fabric
-COPY --from=build_login /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
-COPY --from=build_home /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
-COPY --from=build_dashboard /usr/app/src/src/public/js/dist /usr/app/src/src/public/js/dist
-ENV FABRIC_CFG_PATH /etc/hyperledger/fabric
-EXPOSE 8080
-CMD ["npm", "start"]
+
+
+FROM hyperledger/cello-baseimage:x86_64-latest
+COPY --from=build_js /app/themes/vue /app/themes/vue
+# use this in development
+CMD ["python", "dashboard.py"]
+
+# use this in product
+#CMD ["gunicorn", "-w", "128", "-b", "0.0.0.0:8080", "dashboard:app"]
+
